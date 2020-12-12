@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Offers</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
+        <script src="js/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    </head>
+    <body>
+    	<!-- Insert this where you want the table to appear -->
+    	<div id="table">Loading...</div>
+
+    	<!-- Insert this at the end of your body element, but before the closing tag -->
+    	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
+    	<script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+    	<script>
+    		$(document).ready(function(){
+    			$('#table').initDataTables({{ datatable_settings(datatable) }}, {
+    			    searching: true,
+    			    dom:'<"html5buttons"B>lfrtip',
+    			    lengthMenu: [ 5, 10, 25, 50],
+    			    columnDefs: [
+    			        { targets: 0,
+    			        	width: "5%",
+    			          render: function(data) {
+    			            return '<img src="'+data+'">'
+    			          }
+    			        },
+    			        { targets: 1,
+    			        	width: "5%"
+    			        },
+    			        { targets: 2,
+    			        	width: "70%"
+    			        } 
+    			      ]
+    			});
+    		})
+    	</script>
+    	<style>
+    		th{
+    			text-align:left;
+    		}
+    	</style>
+    </body>
+</html>
