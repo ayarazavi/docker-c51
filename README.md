@@ -34,3 +34,7 @@ After the components are ready, docker will use "composer" to install the symfon
 Then it'll run the symfony's doctrine migrations to create the database "symfony", and table "offer" inside it and populates the table using the c51.json file located inside the data folder within the app.
 
 
+## Result
+![result image](https://github.com/ayarazavi/docker-c51/blob/main/images/result.png)
+
+
